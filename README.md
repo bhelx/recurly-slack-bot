@@ -1,12 +1,16 @@
 # Recurly Slack Bot
 
-This is a starter project to make a slack bot for Recurly. All it currently does is log
-into a slack channel that you specify and post when a new user has subscribed or unsubscribed
-and gives their email.
+This is a starter project to make a slack bot for Recurly. It uses [Elixir](http://elixir-lang.org/), [Plug](https://github.com/elixir-lang/plug), and the
+[Recurly Elixir library](https://github.com/bhelx/recurly-client-elixir).
+
+
+All it currently does is log into a slack channel that you specify and post when a new user has subscribed or unsubscribed
+and gives their email. It could be extended to give you more actionable details, or even accept commands
+from the people in the chat and do some actions on your recurly site.
 
 ![Recurly Bot Example](/images/bot_example.png "Recurly Bot Example")
 
-## Setup
+## Deploying to Heroku
 
 It's built to assume you are running on Heroku. If you wish to run in some other way, changes may need to be made.
 
@@ -55,4 +59,10 @@ To setup on Recurly, you can go the [webhooks configuration page](https://app.re
 your heroku url. Make sure you use the path `/webhooks`.
 
 ![Recurly Setup](/images/recurly_setup.png "Recurly Setup")
+
+## Customizing
+
+If you want to customize what is displayed for each webhook, or maybe add some webhook events, you can do so in the [RecurlyBot.Messages](lib/recurly_bot/messages.ex) module.
+This takes a notification object and returns a Map which gets passed along to slack. You can add more `to_chat_message` functions to match for new notifications. If you want to
+know more about which notifications are available and how to use them, see the [recurly-client-elixir webhooks docs](https://hexdocs.pm/recurly/Recurly.Webhooks.html).
 
