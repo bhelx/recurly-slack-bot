@@ -1,6 +1,6 @@
 defmodule RecurlyBot.Router do
   use Plug.Router
-  import RecurlyBot.Messages, only: [to_chat_message: 1]
+  import RecurlyBot.WebhookResponder, only: [to_chat_message: 1]
   alias Slack.Web.Chat
   alias Recurly.Webhooks
 

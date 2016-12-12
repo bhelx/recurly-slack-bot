@@ -62,7 +62,7 @@ your heroku url. Make sure you use the path `/webhooks`.
 
 ## Customizing
 
-If you want to customize what is displayed for each webhook, or maybe add some webhook events, you can do so in the [RecurlyBot.Messages](lib/recurly_bot/messages.ex) module.
+If you want to customize what is displayed for each webhook, or maybe add some webhook events, you can do so in the [RecurlyBot.WebhookResponder](lib/recurly_bot/webhook_responder.ex) module.
 This takes a notification object and returns a Map which gets passed along to slack. You can add more `to_chat_message` functions to match for new notifications. If you want to
 know more about which notifications are available and how to use them, see the [recurly-client-elixir webhooks docs](https://hexdocs.pm/recurly/Recurly.Webhooks.html).
 

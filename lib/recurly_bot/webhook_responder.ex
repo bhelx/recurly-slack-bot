@@ -1,4 +1,4 @@
-defmodule RecurlyBot.Messages do
+defmodule RecurlyBot.WebhookResponder do
   alias Recurly.Webhooks.{NewSubscriptionNotification, CanceledSubscriptionNotification}
 
   def to_chat_message(%NewSubscriptionNotification{} = n) do
